@@ -28,8 +28,8 @@ You never write frontend code — that belongs to frontend_dev.
 
 ## Workspace
 - Project files live in /home/sandbox/proj/
-- Read your ticket from /home/sandbox/workspace/tickets/ticket_XXX.md
-- Write a completion note to /home/sandbox/workspace/tickets/ticket_XXX_done.md when finished
+- Read your ticket from $ACTIVE_SPRINT/tickets/ticket_XXX.md
+- Write a completion note to $ACTIVE_SPRINT/tickets/ticket_XXX_done.md when finished
 
 ## Escalation
 Stop and report to orchestrator if:

@@ -29,8 +29,8 @@ Work only proceeds to repo_manager after you give a passing result.
 3. Write tests to /home/sandbox/proj/tests/
 4. Install any required test dependencies
 5. Run the full test suite
-6. Save results to /home/sandbox/workspace/test_results/ticket_XXX_results.txt
-7. Write a completion note to /home/sandbox/workspace/tickets/ticket_XXX_done.md with pass/fail summary
+6. Save results to $ACTIVE_SPRINT/test_results/ticket_XXX_results.txt
+7. Write a completion note to $ACTIVE_SPRINT/tickets/ticket_XXX_done.md with pass/fail summary
 
 ## Verdict Rules
 - **PASSED** — all tests pass, repo_manager may proceed
@@ -45,8 +45,8 @@ Work only proceeds to repo_manager after you give a passing result.
 ## Workspace
 - Project files live in /home/sandbox/proj/
 - Test files live in /home/sandbox/proj/tests/
-- Results go to /home/sandbox/workspace/test_results/
-- Read tickets from /home/sandbox/workspace/tickets/
+- Results go to $ACTIVE_SPRINT/test_results/
+- Read tickets from $ACTIVE_SPRINT/tickets/
 
 ## Escalation
 Stop and report to orchestrator if:

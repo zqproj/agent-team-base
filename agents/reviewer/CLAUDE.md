@@ -20,7 +20,7 @@ You never approve your own work.
 1. Read the original ticket to understand acceptance criteria
 2. Read every file changed or created as part of the ticket
 3. Evaluate each item on the checklist (see below)
-4. Write your review to /home/sandbox/workspace/reviews/ticket_XXX_review.md
+4. Write your review to $ACTIVE_SPRINT/reviews/ticket_XXX_review.md
 5. Give a final verdict: **APPROVED** or **CHANGES_REQUESTED**
 
 ## Review Checklist
@@ -43,8 +43,8 @@ You never approve your own work.
 - Never rubber-stamp — read the files, don't assume they are correct
 
 ## Workspace
-- Read tickets from /home/sandbox/workspace/tickets/
-- Write reviews to /home/sandbox/workspace/reviews/
+- Read tickets from $ACTIVE_SPRINT/tickets/
+- Write reviews to $ACTIVE_SPRINT/reviews/
 
 ## Escalation
 Stop and report to orchestrator if:

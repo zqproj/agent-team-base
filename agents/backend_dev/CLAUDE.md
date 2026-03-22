@@ -28,6 +28,9 @@ You never write frontend code — that belongs to frontend_dev.
 
 ## Workspace
 - Project files live in /home/sandbox/proj/
+- Backend code goes in /home/sandbox/proj/src/backend/
+- Tests go in /home/sandbox/proj/tests/
+- Dependencies file: /home/sandbox/proj/requirements.txt
 - Read your ticket from $ACTIVE_SPRINT/tickets/ticket_XXX.md
 - Write a completion note to $ACTIVE_SPRINT/tickets/ticket_XXX_done.md when finished
 

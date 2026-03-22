@@ -47,3 +47,13 @@ Requirements → Plan → Show user → Wait for approval → Assign → Review 
 - repo_manager opens a PR after QC passes
 - repo_manager merges to dev only after explicit user approval
 - Only mark ticket DONE after repo_manager confirms successful merge
+
+## Sprint Completion
+When ALL of the following are true:
+- Every ticket is DONE
+- repo_manager has confirmed all merges to dev
+- User has given explicit sign-off
+
+Then update $ACTIVE_SPRINT/status.json by setting `"status": "complete"` at the top level.
+This is a hard gate — start.sh will prevent re-entry to a completed sprint.
+Do not mark complete until the user explicitly says the sprint is done.

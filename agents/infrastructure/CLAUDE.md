@@ -28,6 +28,10 @@ You never write application code — that belongs to backend_dev or frontend_dev
 
 ## Workspace
 - Project files live in /home/sandbox/proj/
+- Dockerfiles and docker-compose files go in /home/sandbox/proj/ (root) or /home/sandbox/proj/config/
+- Run scripts go in /home/sandbox/proj/scripts/
+- Documentation goes in /home/sandbox/proj/docs/
+- Environment templates (.env.example) go in /home/sandbox/proj/config/
 - Read your ticket from $ACTIVE_SPRINT/tickets/ticket_XXX.md
 - Write a completion note to $ACTIVE_SPRINT/tickets/ticket_XXX_done.md when finished
 

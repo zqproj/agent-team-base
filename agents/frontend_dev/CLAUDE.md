@@ -26,7 +26,8 @@ You never write backend/server-side logic — that belongs to backend_dev.
 
 ## Workspace
 - Project files live in /home/sandbox/proj/
-- Templates live in /home/sandbox/proj/templates/
+- Frontend code goes in /home/sandbox/proj/src/frontend/
+- Templates live in /home/sandbox/proj/src/frontend/templates/
 - Read your ticket from $ACTIVE_SPRINT/tickets/ticket_XXX.md
 - Write a completion note to $ACTIVE_SPRINT/tickets/ticket_XXX_done.md when finished
 

@@ -1,0 +1,146 @@
+services:
+
+  orchestrator:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: orchestrator
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=orchestrator
+    stdin_open: true
+    tty: true
+
+  backend_dev:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: backend_dev
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=backend_dev
+      - GIT_AUTHOR_NAME=Backend Dev Agent
+      - GIT_AUTHOR_EMAIL=backend-dev@agent.local
+      - GIT_COMMITTER_NAME=Backend Dev Agent
+      - GIT_COMMITTER_EMAIL=backend-dev@agent.local
+
+  frontend_dev:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: frontend_dev
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=frontend_dev
+      - GIT_AUTHOR_NAME=Frontend Dev Agent
+      - GIT_AUTHOR_EMAIL=frontend-dev@agent.local
+      - GIT_COMMITTER_NAME=Frontend Dev Agent
+      - GIT_COMMITTER_EMAIL=frontend-dev@agent.local
+
+  infrastructure:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: infrastructure
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=infrastructure
+      - GIT_AUTHOR_NAME=Infrastructure Agent
+      - GIT_AUTHOR_EMAIL=infrastructure@agent.local
+      - GIT_COMMITTER_NAME=Infrastructure Agent
+      - GIT_COMMITTER_EMAIL=infrastructure@agent.local
+
+  reviewer:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: reviewer
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=reviewer
+      - GIT_AUTHOR_NAME=Reviewer Agent
+      - GIT_AUTHOR_EMAIL=reviewer@agent.local
+      - GIT_COMMITTER_NAME=Reviewer Agent
+      - GIT_COMMITTER_EMAIL=reviewer@agent.local
+
+  qc_tester:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: qc_tester
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=qc_tester
+      - GIT_AUTHOR_NAME=QC Tester Agent
+      - GIT_AUTHOR_EMAIL=qc-tester@agent.local
+      - GIT_COMMITTER_NAME=QC Tester Agent
+      - GIT_COMMITTER_EMAIL=qc-tester@agent.local
+
+  repo_manager:
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: repo_manager
+    volumes:
+      - ./proj:/home/sandbox/proj
+      - ./workspace:/home/sandbox/workspace
+      - ${CLAUDE_DIR}:/mnt/claude-config/.claude:ro
+      - ${CLAUDE_JSON}:/mnt/claude-config/.claude.json:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_USER=${GITHUB_USER}
+      - AGENT_NAME=repo_manager
+      - GIT_AUTHOR_NAME=Repo Manager Agent
+      - GIT_AUTHOR_EMAIL=repo-manager@agent.local
+      - GIT_COMMITTER_NAME=Repo Manager Agent
+      - GIT_COMMITTER_EMAIL=repo-manager@agent.local

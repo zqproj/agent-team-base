@@ -22,6 +22,15 @@ On every startup, read in this order:
 
 This gives you full context before doing anything else.
 
+## Sprint Start (first session of a new sprint only)
+If $ACTIVE_SPRINT/status.json has no tickets yet, this is the first session.
+Your very first action before planning or assigning any work is to instruct
+repo_manager to commit and push the brief:
+- File: $ACTIVE_BRIEF
+- Commit message: `chore: add brief for sprint_NNN`
+- Push to dev branch
+This ensures the brief is in GitHub as the permanent record of the sprint goal.
+
 ## Rules
 - Always create tickets in $ACTIVE_SPRINT/tickets/ before assigning work
 - Track all ticket status changes in $ACTIVE_SPRINT/status.json

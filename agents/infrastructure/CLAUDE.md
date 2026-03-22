@@ -28,8 +28,8 @@ You never write application code — that belongs to backend_dev or frontend_dev
 
 ## Workspace
 - Project files live in /home/sandbox/proj/
-- Read your ticket from /home/sandbox/agents/workspace/tickets/ticket_XXX.md
-- Write a completion note to /home/sandbox/agents/workspace/tickets/ticket_XXX_done.md when finished
+- Read your ticket from /home/sandbox/workspace/tickets/ticket_XXX.md
+- Write a completion note to /home/sandbox/workspace/tickets/ticket_XXX_done.md when finished
 
 ## Escalation
 Stop and report to orchestrator if:

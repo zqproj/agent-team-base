@@ -21,10 +21,11 @@ RUN git config --global credential.helper store && \
 
 WORKDIR /home/sandbox
 
-# Each agent dir must contain CLAUDE.md and entrypoint.sh at build time
-# setup.sh copies these from agent-team-base before running docker compose build
-COPY CLAUDE.md /home/sandbox/CLAUDE.md
-COPY entrypoint.sh /entrypoint.sh
+# AGENT_NAME selects which agent's CLAUDE.md to copy (e.g. backend_dev)
+# Build context is ./agents/ so paths are relative to that directory
+ARG AGENT_NAME
+COPY ${AGENT_NAME}/CLAUDE.md /home/sandbox/CLAUDE.md
+COPY shared/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 RUN chown -R sandbox:sandbox /home/sandbox

@@ -1,7 +1,11 @@
 services:
 
   orchestrator:
-    build: ./agents/orchestrator
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: orchestrator
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -16,7 +20,11 @@ services:
     tty: true
 
   backend_dev:
-    build: ./agents/backend_dev
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: backend_dev
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -33,7 +41,11 @@ services:
       - GIT_COMMITTER_EMAIL=backend-dev@agent.local
 
   frontend_dev:
-    build: ./agents/frontend_dev
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: frontend_dev
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -50,7 +62,11 @@ services:
       - GIT_COMMITTER_EMAIL=frontend-dev@agent.local
 
   infrastructure:
-    build: ./agents/infrastructure
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: infrastructure
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -67,7 +83,11 @@ services:
       - GIT_COMMITTER_EMAIL=infrastructure@agent.local
 
   reviewer:
-    build: ./agents/reviewer
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: reviewer
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -84,7 +104,11 @@ services:
       - GIT_COMMITTER_EMAIL=reviewer@agent.local
 
   qc_tester:
-    build: ./agents/qc_tester
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: qc_tester
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace
@@ -101,7 +125,11 @@ services:
       - GIT_COMMITTER_EMAIL=qc-tester@agent.local
 
   repo_manager:
-    build: ./agents/repo_manager
+    build:
+      context: ./agents
+      dockerfile: shared/Dockerfile
+      args:
+        AGENT_NAME: repo_manager
     volumes:
       - ./proj:/home/sandbox/proj
       - ./workspace:/home/sandbox/workspace

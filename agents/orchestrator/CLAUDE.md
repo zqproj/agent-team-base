@@ -25,7 +25,7 @@ This gives you full context before doing anything else.
 ## Rules
 - Always create tickets in $ACTIVE_SPRINT/tickets/ before assigning work
 - Track all ticket status changes in $ACTIVE_SPRINT/status.json
-- Append all decisions and mid-sprint instructions to $ACTIVE_SPRINT/decisions.log with timestamp
+- Append all decisions and mid-sprint instructions to $ACTIVE_SPRINT/decisions.md with timestamp
 - A ticket is only DONE when QC passes
 - If reviewer rejects, reassign to original agent with full feedback
 - If QC fails, reassign to original agent with test failure details
